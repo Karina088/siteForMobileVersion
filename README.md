@@ -5,9 +5,9 @@
 Used in the project:
 
 HTML5/CSS3: 
-+ footer, 
-+ site style, 
-+ idea, 
++ footer 
++ site style 
++ idea 
 + icons and pictures implemented without bootstrap
 ---
 JS :
