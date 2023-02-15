@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Blog | amazing places</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <style>
+        ul,
+        li {
+            list-style: none;
+            padding: 4px;
+        }
+
+        .link::before {
+            content: '🦋';
+            padding-right: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: grey;
+        }
+
+        a:hover {
+            color: rgb(31, 113, 220);
+        }
+
+        h6 {
+            font-size: 18px;
+            letter-spacing: 0.07rem;
+            color: rgb(31, 30, 30);
+        }
+    </style>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="home" viewBox="0 0 16 16">
+            <path
+                d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z">
+            </path>
+        </symbol>
+        <symbol id="grid" viewBox="0 0 16 16">
+            <path
+                d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z">
+            </path>
+        </symbol>
+    </svg>
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid" style="display: flex; margin: auto 16px;">
+            <a class="navbar-brand" href="#" style="color: rgb(74, 44, 30);">Blog about amazing places &#9730;</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: rgb(7, 97, 67);">Blog</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <svg class="bi pe-none me-2" width="16" height="16">
+                                    <use xlink:href="#home"></use>
+                                </svg>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><svg class="bi pe-none me-2" width="16" height="16">
+                                    <use xlink:href="#grid"></use>
+                                </svg>Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" id="searchForm" type="search" placeholder="Search"
+                            aria-label="Search" value="">
+                        <button class="btn btn-outline-success" type="submit"
+                            onclick="FindOnPageWords('searchForm'); return false;">Search</button>
+                        <!-- <button class="btn btn-outline-success" type="submit">Search2</button>
+                        <button class="btn btn-outline-success-1" type="submit">Test</button> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main style="background-color: azure; margin-top: 32px;">
+        <div class="d-flex flex-nowrap search-word" style="display: flex; justify-content: center;">
+            <div class="p-3 m-0 border-0 bd-example">
+                <div id="carouselExampleCaptions" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://gamerwall.pro/uploads/posts/2022-08/1661284205_1-gamerwall-pro-p-krasivaya-letnyaya-priroda-vkontakte-1.jpg"
+                                height="414" class="d-block w-100" alt="picture photo">
+                            <div class="carousel-caption d-md-block">
+                                <h5>Purple lupins in the field</h5>
+                                <!-- <p>In the upper left corner, the cloud looks like an eagle. The incredible beauty of
+                                    this
+                                    place makes you believe in a fairy tale</p> -->
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://oir.mobi/uploads/posts/2021-05/1622222895_1-oir_mobi-p-leto-priroda-priroda-krasivo-foto-1.jpg"
+                                height="414" class="d-block w-100" alt="picture photo">
+                            <div class="carousel-caption d-md-block">
+                                <h5>Quiet place</h5>
+                                <!-- <p>You look into the distance through the pond</p> -->
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://severnykavkaz.ru/wp-content/uploads/2019/02/priroda-ingushetii.jpg"
+                                height="414" class="d-block w-100" alt="picture photo">
+                            <div class="carousel-caption d-md-block">
+                                <h5>Dawn on the mountains</h5>
+                                <!-- <p>Are you blinded by a bright light or maybe it's just that you are dazzling</p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="p-3 m-0 border-0 bd-example search-word">
+            <div class="accordion" id="accordionExample" style="margin: 44px 0 44px 0; ">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button style="background-color: rgba(206, 192, 238, 0.79); color: rgba(69, 26, 26, 0.838);"
+                            class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Rice terraces Mu Cang Chai
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p style="color: rgba(43, 12, 12, 0.821);">Mi kan tea (Vietnam) - smoothly bending
+                                terraces carved on
+                                mountain slopes. Local peasants plant rice on them. From February to April they are
+                                flooded
+                                water that creates a mirror effect and
+                                Unimaginably sparkles in the rays of the sun. From May to mid -September, the slopes are
+                                painted in
+                                Juicy emerald color due to grown rice shoots. This is the best time for
+                                To come here to admire an unusual landscape. Then the slopes become
+                                Golden brown-they are also beautiful in their own way, but they are already impressive
+                                not so much. </p>
+                            <div>
+                                <img src="https://planetofhotels.com/guide/sites/default/files/styles/paragraph__text_with_image___twi_image/public/2021-01/Mu-Cang-Chai.jpg"
+                                    style="width: 350px; height: 200px;" alt="photo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button style="background-color: rgba(206, 192, 238, 0.79); color: rgba(69, 26, 26, 0.838);"
+                            class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Antelope Canyon
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div><img
+                                    src="https://planetofhotels.com/guide/sites/default/files/styles/paragraph__text_with_image___twi_image/public/2021-01/Antelope-Canyon.jpg"
+                                    style="width: 350px; height: 200px;" alt="photo"></div>
+                            <p style="color: rgba(43, 12, 12, 0.821);">Amazing canyon antelopes received his
+                                name because of red-red walls, very
+                                similar to the skin of this animal. Located in the American state
+                                Arizona, on the territory of the Navaho Indians. They work here by guides - on their own
+                                It is impossible to visit the upper and lower canyons due to a serious threat of
+                                flooding in the case
+                                Livnia. For millions of years, water and wind turned this place into a real work
+                                art. They drove out of red sandstone elegant passages of a bizarre shape, and daytime
+                                Light that falls here through narrow cracks makes the rocks shimmer and change your
+                                shade.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button style="background-color: rgba(206, 192, 238, 0.79); color: rgba(69, 26, 26, 0.838);"
+                            class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Caves of the Vatanayokudl glacier (Vatnajokull)
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div>
+                                <img src="https://planetofhotels.com/guide/sites/default/files/styles/paragraph__text_with_image___twi_image/public/2021-01/Vatnajokull.jpg"
+                                    style="width: 350px; height: 200px;" alt="photo">
+                            </div>
+                            <p style="color: rgba(43, 12, 12, 0.821);">The giant Vatanayokudl glacier is in
+                                Iceland and has the status of the largest in
+                                Europe, taking third place in the world after Greenland and Antarctica glaciers. In his
+                                South
+                                Parts are amazing ice caves of extraordinary beauty. They
+                                have been formed for many thousands of years under the influence of underground
+                                geothermal
+                                sources and flows of melt water. As a result of melting and freezing, the cave walls
+                                accepted
+                                amazing forms and shimmer in thousands of shades-from bright blue, aquamarine and
+                                Indigo to orange-red, when the rays of the sun penetrate the thickness of the ice. In
+                                the caves
+                                Vatanayokudl Glacier can get as part of a tour to see this with your own eyes
+                                The splendor is one of the most beautiful and interesting places in the world.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-word" style="margin: auto 16px;">
+            <h4 style="color: rgb(13, 77, 77); text-decoration: overline;">Lake Baikal</h4>
+            <p style="color: rgb(35, 67, 56);">Ancient Siberian Baikal suppresses its
+                grandeur, beauty and unfortunate
+                expanses. It was recognized as
+                the deepest lake in the world, and for its unique ecosystem was included in the UNESCO World Heritage
+                List. Stunning natural landscapes of Baikal can be admired at any time of the year - the climate in this
+                region of Eastern Siberia is soft enough for fascinating trips and walks. One of the most popular
+                tourist places here is the village of Listvyanka. A large number of excursions to the most interesting
+                places are sent from here. In the list of the most popular-Barguzinsky and Chivyrkuyui Gulfs, a rock
+                chaman-stone, the Holy Nose Peninsula, Olkhon Island and the Small Sea. For fans of outdoor activities,
+                horseback riding, skiing, lake cruises and campaigns along the Big Baikal Trail (BBT) - a system of
+                ecological paths that allow you to admire the unique beauty of this region.</p>
+            <img src="https://planetofhotels.com/guide/sites/default/files/styles/paragraph__text_with_image___twi_image/public/2021-01/Lake-Baikal.jpg"
+                style="width: 350px; height: 200px; box-shadow: 2px 2px 8px rgb(13, 77, 77);" alt="photo">
+        </div>
+        <div class="search-word"
+            style="display: flex; justify-content: right; margin: 32px 16px 0 16px; padding-bottom: 44px;">
+            <button type="button" class="btn btn-primary"
+                style="background-color: rgba(97, 173, 34, 0.842); border: rgba(33, 70, 14, 0.842);"
+                data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <!-- Find out what awaits you -->
+                &#128172;
+            </button>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Mood for today</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            An interesting adventure awaits you. You can achieve your dreams. &#9996; Good luck!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button"
+                                style="background-color: rgba(55, 122, 22, 0.842); border: rgba(33, 70, 14, 0.842);"
+                                class="btn btn-primary">Fine</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer style="background-color: rgba(246, 225, 209, 0.492);">
+        <div style="margin: auto 16px; display: flex; justify-content: space-around; flex-direction: column;">
+            <div style="padding-top: 48px;">
+                <div>
+                    <h6>Inforation</h6>
+                    <ul>
+                        <li class="link"><a href="#">About Blog</a></li>
+                        <li class="link"><a href="#">Company</a></li>
+                        <li class="link"><a href="#">Donations</a></li>
+                        <li class="link"><a href="#">Contacts</a></li>
+                        <li class="link"><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <ul style="display:flex; justify-content: center; margin-top: 44px;">
+                        <li><a href="#"><img src="img/instagram.png" alt="icon photo"></a></li>
+                        <li><a href="#">
+                                <img src="img/telegramSize32.png" alt="icon photo">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="img/youtube.png" alt="icon photo">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="img/google.png" alt="icon photo">
+                            </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p style="color: grey;">&copy;&nbsp;2023 &laquo;Blog about amazing places&raquo;. All rights
+                        reserved.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </footer>
+
+
+    <script src="search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
