@@ -4,7 +4,14 @@
 
 Used in the project:
 
----
+*****
+
+* * * * *
+___
+
+
+
+
 HTML5/CSS3: 
 + footer, 
 + site style, 
