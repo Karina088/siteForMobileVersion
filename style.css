@@ -1,3 +1,29 @@
+ul,
+li {
+    list-style: none;
+    padding: 4px;
+}
+
+.link::before {
+    content: '🦋';
+    padding-right: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: grey;
+}
+
+a:hover {
+    color: rgb(31, 113, 220);
+}
+
+h6 {
+    font-size: 18px;
+    letter-spacing: 0.07rem;
+    color: rgb(31, 30, 30);
+}
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -56,14 +82,6 @@ body {
 
 html {
     height: -webkit-fill-available;
-}
-
-main {
-    height: 100vh;
-    height: -webkit-fill-available;
-    max-height: 100vh;
-    overflow-x: auto;
-    overflow-y: hidden;
 }
 
 .dropdown-toggle {
